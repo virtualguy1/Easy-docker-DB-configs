@@ -1,0 +1,14 @@
+version: '1'
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    volumes:
+      - /home/abhinav/Documents/mysqlDB:/var/lib/mysql
+    ports:
+      - 3306:3306  # make sure you don't have another container running on port 3306
+    environment:
+      - MYSQL_DATABASE=chaiDB
+      - MYSQL_USER=chaiaurcode
+      - MYSQL_PASSWORD=chaiaurcode  #  Change the password
+      - MYSQL_ROOT_PASSWORD=rootpassword  # Change the password for root
